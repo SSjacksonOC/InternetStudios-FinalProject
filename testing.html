@@ -6,6 +6,18 @@
     <title> Ballad of Shattered Wings </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <style>
+        html {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+        body {
+            scroll-behavior: smooth;
+            scrollbar-width: 1rem;
+            padding: 4rem;
+            margin: 2rem;
+
+        }
         h1 {
             position: relative;
             text-align: center;
@@ -13,32 +25,86 @@
         }
         h1::before {
             position: absolute;
-            content: attr(text);
+            content: attr(name);
             padding: 2em 0;
             top: 0;
             left: 0;
         }
         h1::before {
-            clip-path:circle(30% 50% 50%);
-            color: yellow;
+            clip-path:polygon(50% 0%, 0% 100%, 100% 75%);
         }
         h1::before {
             transform: rotate(var(--rotation, 0));
             transition: transform 1s;
         }
     </style>
-    <script>
-        let headline = document.querySelector('h1');
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrollPosition = ((scrollTop / scrollHeight)-0.4) * 100;
-            headline.style.setProperty('--rotation',`${scrollPosition}deg`);
-        });
-    </script>
 </head>
 <body>
-    <h1>This is a test in rotating text which tests me so</h1>
+    <h1 name="">
+        This is a test in rotating text which tests me so
+        that is right round
+        yeah i try
+        yeah
+        lettting go letting flow
+        oh baby woooooooooooooooooo ow babbbyy
+        woooooooooooooooooowowoowowo
+        owowowowowo fejfjjfrjfjrjfrjfjfjf
+    </h1>
+    <p>1<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>11<br>1<br>1<br>1<br>1<br>1<br>1<br>1</p>
 </body>
+<script>
+    let headline = document.querySelector('h1');
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrollPosition = ((scrollTop / scrollHeight)-0.8) * 100;
+        headline.style.setProperty('--rotation',`${scrollPosition}deg`);
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </html>
+<script>
+    //document.body.style.opacity = 0.5;
+   // document.body.style.transform = `rotate(35deg)`;
+
+   function randomNumber(min, max) {
+        return (Math.random() * (max - min)) + min;
+   }
+
+   // define divs
+   let divs = document.querySelectorAll(".grid-container div");
+
+   function randomize() {
+
+   //only to each div tags
+   divs.forEach(function (div) {
+     let scale = randomNumber(.3, 1.1);
+     let translateX = randomNumber(0, 50);
+     let translateY = randomNumber(0, 20);
+     let rotate = randomNumber(0, 360);
+
+     //half of the time do this
+     if (Math.random() > 0.5) {
+        scale = 1; //dont affect
+        translateX = randomNumber(0,80);
+        translateY = randomNumber(0, 80);
+     }
+     div.style.transform = `scale(${scale}) translate(${translateX}%, ${translateY}%) rotate(${rotate}deg)`;
+   });
+}
+
+document.addEventListener("click", randomize);
+
+    
+      //  let rotation = 0;
+      //  document.addEventListener("click", function () {
+        //    let min = 10;
+          //  let max = 40;
+            //rotation += Math.random() * (max - min) + min;
+            //document.body.style.transform = `rotate(${rotation}deg)`;
+
+        //});
+
+
+    //Lets make it so this is a block of solid color? and then clicking makes it spin/move so that it shows beneath text
+</script>
