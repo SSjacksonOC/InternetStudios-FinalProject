@@ -15,32 +15,33 @@
             scroll-behavior: smooth;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             background-color: antiquewhite;
+            font-style: oblique;
+            line-height: 0.8;
         }        
         h1 {
             position: relative;
             text-align: center;
             padding: 2em 0;
-            overflow: hidden;
         }
         h1::before {
             position: absolute;
             content: attr(name);
-            padding: auto;
+            padding: 2em 0;
         }
         h1::before {
             clip-path: polygon(48% 0%, 17% 75%, 100% 67%);
         }
         h1::before {
             transform: rotate(var(--rotation, 0));
-            transition: transform 1.5s;
+            transition: transform 1s;
         }
     </style>
 </head>
 <body>
-    <div style="border: 3%; flex: content; overflow: scroll;" class=".col-md-6 .offset-md-1">
+    <div style="border: 3%; flex: auto;" class=".col-md-6 .offset-md-3">
         <h1 name="Ballad of Shattered Wings">Ballad of Shattered Wings</h1>
-        <h1 name=" ">-------Jackson R. O'Connor-------</h1>
-        <h1 name="On his tod, a fox watches the glass bird," class="hold">On his tod, a fox watches the glass bird,</h1>
+        <h1>-------Jackson R. O'Connor-------</h1>
+        <h1 name="On his tod, a fox watches the glass bird,">On his tod, a fox watches the glass bird,</h1>
         <h1 name="It watches it up high&mdash;watches how it glistens&mdash;">It watches it up high&mdash;watches how it glistens&mdash;</h1>
         <h1 name=""></h1>
         <h1 name=""></h1>
@@ -78,13 +79,6 @@
 
 </body>
 <script>
-    function randomNumber(min, max) {
-        return (Math.random() * (max - min)) + min;
-   }
-   skew1 = randomNumber(1, 100);
-   skew2 = randomNumber(1, 100);
-   skew3 = randomNumber(1, 100);
-   skew4 = randomNumber(1, 100);
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
