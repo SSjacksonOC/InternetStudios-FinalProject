@@ -32,17 +32,16 @@
         }
         h1::before {
             transform: rotate(var(--rotation, 0));
-            transform: skew(r);
             transition: transform 1.5s;
         }
     </style>
 </head>
 <body>
-    <div style="border: 3%; flex: content; overflow: scroll;" class=".col-md-6 .offset-md-3">
+    <div style="border: 3%; flex: content; overflow: scroll;" class=".col-md-6 .offset-md-1">
         <h1 name="Ballad of Shattered Wings">Ballad of Shattered Wings</h1>
-        <h1 name=""></h1>
-        <h1 name=""></h1>
-        <h1 name=""></h1>
+        <h1 name=" ">-------Jackson R. O'Connor-------</h1>
+        <h1 name="On his tod, a fox watches the glass bird," class="hold">On his tod, a fox watches the glass bird,</h1>
+        <h1 name="It watches it up high&mdash;watches how it glistens&mdash;">It watches it up high&mdash;watches how it glistens&mdash;</h1>
         <h1 name=""></h1>
         <h1 name=""></h1>
         <h1 name=""></h1>
@@ -82,11 +81,10 @@
     function randomNumber(min, max) {
         return (Math.random() * (max - min)) + min;
    }
-   skew1 = randomNumber()
-   2
-   3
-   4
-    let headline = document.querySelector('h1');
+   skew1 = randomNumber(1, 100);
+   skew2 = randomNumber(1, 100);
+   skew3 = randomNumber(1, 100);
+   skew4 = randomNumber(1, 100);
     window.addEventListener('scroll', function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
